@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,900;1,700&family=Victor+Mono:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,900;1,700&family=Victor+Mono:wght@300;700&family=Young+Serif&display=swap');
 
 :root {
   --font-size-h1: 2rem;
@@ -6,14 +6,19 @@
   --font-size-h3: 0.9rem;
   --font-size-heading: 2.4rem;
   --mark-padding: 0.2em;
+  --font-family_1: 'Lato', sans-serif;
+  --font-family_2: 'Victor Mono', monospace;
+  --font-family_3: 'Young Serif', serif;
 }
 
 *{
-  font-family: 'Lato', sans-serif;
-  font-family: 'Victor Mono', monospace;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 .navbar-brand{
+  font-family: var(--font-family_3);
   font-size: var(--font-size-h1);
   font-weight: 900;
   opacity: 0.8;
@@ -30,12 +35,15 @@ li{
 }
 
 .item{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
+
 .details {
+  font-family: var(--font-family_2);
   display: block;
-  margin-left: 3rem;
+  margin: auto 3rem;
 }
 
 
@@ -51,7 +59,7 @@ li{
   padding-top: 2px;
   padding-bottom: 2px;
   margin: auto 0;
-  border-radius: 4px;
+  border-radius: 5px;
 
 }
 
@@ -71,32 +79,43 @@ li{
   margin-left: 0.8rem;
   margin-right: 0.8rem;
 }
+
 .details > .box > .info > .aired {
-  font-size: 1rem;
-  font-weight: 900 !important;
+  font-size: 1.7rem;
+  font-weight: 900;
   opacity: 0.7;
   margin-top: auto;
   margin-bottom: auto;
 }
-
-.sub-title {
+h5 {
   font-size: var(--font-size-heading);
-  font-weight: 900;
-  margin: 2.4rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-top: 1.9rem;
+  margin-right: auto;
 }
-
-.sub-type {
+.sub-list {
+  font-family: var(--font-family_1);
+}
+.main-poster {
+  margin: 12% auto;
+}
+.poster {
+  margin-left: 22px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  margin: 4px solid white;
+  width: 240px;
+  height: 300px;
+}
+.sub-type-year {
+  background-color: rgba(249, 175, 78, 0.598);
+  position: absolute;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 3px;
   font-size: 1rem;
   font-weight: 900;
-  opacity: 0.7;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.sub-year {
-  font-size: 1rem;
-  font-weight: 900 !important;
-  opacity: 0.7;
-  margin-top: auto;
-  margin-bottom: auto;
+  opacity: 0.8;
 }
