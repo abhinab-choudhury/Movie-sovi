@@ -42,6 +42,7 @@ li{
 .search-list {
   position: absolute;
   width: 200px;
+  margin-left: 12px;
   right: 1;
   top: 77%;
   max-height: 400px;
@@ -59,9 +60,8 @@ li{
   -o-transition: background-color 200ms ease;
   transition: background-color 200ms ease;
 }
-
 .search-list .search-list-item:hover {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 .search-list-item {
@@ -73,15 +73,9 @@ li{
   align-items: center;
 }
 
-.search-list-thumbnail img {
-  width: 4px;
+.search-item-thumbnail > img {
+  width: 80px;
   margin-right: 1rem;
-}
-
-.search-list-info h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.6;
 }
 
 /* thumbnail */
@@ -100,6 +94,7 @@ li{
   border-radius: 10px;
 }
 
+
 .hide-search-list {
   display: none;
 }
@@ -112,12 +107,11 @@ li{
 }
 
 
-.details > .box{
+.box{
   display: flex;
- 
 }
 
-.details > .box > .info{
+.info{
   background-color: blanchedalmond; 
   display:flex;
   padding-right: 10px;
@@ -128,15 +122,15 @@ li{
 
 }
 
-.details > .box > .title { 
+.title { 
   font-size: var(--font-size-heading);
   font-weight: 900;
   margin: 2.4rem 0;
   padding-right: 8px;
 }
 
-.details > .box > .info > .type {
-  font-size: 1rem;
+.type {
+  font-size: 0.9rem;
   font-weight: 900;
   opacity: 0.7;
   margin-top: auto;
@@ -145,20 +139,22 @@ li{
   margin-right: 0.8rem;
 }
 
-.details > .box > .info > .aired {
-  font-size: 1.7rem;
+.aired {
+  font-size: 1.2rem;
   font-weight: 900;
   opacity: 0.7;
   margin-top: auto;
   margin-bottom: auto;
 }
-h5 {
+
+.movie-name {
   font-size: var(--font-size-heading);
-  font-size: 1.4rem;
+  font-size: 17px;
   font-weight: 700;
   opacity: 0.8;
   margin-top: 1.9rem;
   margin-right: auto;
+  color: #ffffff;
 }
 .sub-list {
   font-family: var(--font-family_1);
@@ -183,4 +179,33 @@ h5 {
   font-size: 1rem;
   font-weight: 900;
   opacity: 0.8;
+}
+
+
+.info-rating {
+  display: flex;
+  font-family: var(--font-family_2);
+  font-size: .8rem;
+  margin-top:40px;
+}
+
+.info-rating > img {
+  width: 32px;
+  height: 32px;
+}
+.space {
+  margin-right:8px; 
+  margin-left:8px;
+}
+
+.tags {
+  display:flex;  
+  align-items: center;
+  margin-right: 10px;
+}
+
+.plot {
+  font-family: var(--font-family_2);
+  font-weight: 700;
+  font-size: 1rem;
 }
