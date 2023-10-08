@@ -152,12 +152,12 @@ li{
 }
 
 .movie-name {
+  display: grid;
+  margin: 0px auto;
   font-size: var(--font-size-heading);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   opacity: 0.8;
-  margin-top: 1.9rem;
-  margin-right: auto;
   color: #161515;
 }
 .sub-list {

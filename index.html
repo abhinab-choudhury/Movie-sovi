@@ -18,7 +18,7 @@
                 <div class="container">
                     <img class="me-4" width="67" height="67" src="https://img.icons8.com/color/100/cinema---v1.png"
                         alt="cinema---v1" />
-                    <a class="navbar-brand" href="#">Movie-sovi</a>
+                    <a class="navbar-brand" href="/">Movie-sovi</a>
                     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -27,22 +27,26 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavId">
                         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" aria-current="page">Home <span
-                                        class="visually-hidden">(current)</span></a>
+                                <a class="nav-link active" href="/" aria-current="page">
+                                    Home 
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Movies</a>
+                                <a class="nav-link" href="/">Watched</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Series</a>
+                                <a class="nav-link" href="/">Wishlist</a>
                             </li>
                         </ul>
                         <!--  -->
                         <div class="d-flex my-2 my-lg-0">
-                            <input class="search-box form-control me-sm-2 m-2 w-75" type="text" placeholder="Search">
+                            <span class="input-field mx-2">
+                                <input class="search-box form-control mt-2" type="text" placeholder="Search">
+                            </span>
                             <div class="search-list" id="search-list">
                             </div>
-                            <button class="btn btn-outline-success my-2" type="submit">Search</button>
+                            <button id="search-btn" class="btn btn-outline-success my-2" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
@@ -66,46 +70,53 @@
                             </div>
                             <div class="sub-list container">
                                 <div class="d-flex">
-                                    <p class="sub-type-year"> 
+                                    <p class="sub-type-year">
                                         Released : 01 May 2006
                                     </p>
-                                    <p class="sub-type-year" style="margin-top: 30px;"> 
-                                        Seasons : 5
+                                    <p class="sub-type-year" style="margin-top: 30px;">
+                                        Seasons : 12
                                     </p>
                                     <p class="info-rating" style="margin-top: 37px;">
-                                        <span class="tags">
-                                            <img src="https://img.icons8.com/color/48/imdb.png" alt="imdb"/>                                       
-                                            <img class="space" width="28" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 
-                                            7.7
+                                        <span class="tags" title="Ratings">
+                                            <img src="https://img.icons8.com/color/48/imdb.png" alt="imdb" />
+                                            <img class="space" width="28" height="28"
+                                                src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1" />
+                                            8.2
                                         </span>
-                                        <span class="tags">
-                                            <img class="space" src="https://img.icons8.com/parakeet/48/starred-ticket.png" alt="starred-ticket"/>
-                                            7.7/10
+                                        <span class="tags" title="Votes">
+                                            <img class="space"
+                                                src="https://img.icons8.com/parakeet/48/starred-ticket.png"
+                                                alt="starred-ticket" />
+                                            842,187
                                         </span>
-                                        <span class="tags">
-                                            <img class="space"  src="https://img.icons8.com/arcade/64/comet.png" alt="comet"/>
-                                            Short Drama Thriller
+                                        <span class="tags" title="Genre">
+                                            <img class="space" src="https://img.icons8.com/arcade/64/comet.png"
+                                                alt="comet" />
+                                            Comedy, Romance
                                         </span>
                                     </p>
                                 </div>
-                                <p id="languages">
+                                <p id="languages" title="Languages Avilable">
                                     <span class="sub-type-language">English</span>
                                     <span class="sub-type-language">Hindi</span>
                                     <span class="sub-type-language">Italian</span>
-                                    <span class="sub-type-language">Russian</span> 
+                                    <span class="sub-type-language">Russian</span>
                                     <span class="sub-type-language">Mandarin</span>
-                                    <span class="sub-type-language">Klingon</span> 
+                                    <span class="sub-type-language">Klingon</span>
                                 </p>
-                                <p class="text-wrap plot" >
-                                    In the aftermath of September 11th and "America's War on Terror" two friends begin to suspect that their Middle-Eastern neighbor is a terrorist and devise a plan to investigate their suspicions.
+                                <p class="text-wrap plot">
+                                    A woman who moves into an apartment across the hall from two brilliant but socially
+                                    awkward physicists shows them how little they know about life outside of the
+                                    laboratory.
                                 </p>
                             </div>
                             <div class="actors">
-                                <span class="text-muted">Actors :</span> 
+                                <span class="text-muted">Actors :</span>
                                 <div class="actors-names">Johnny Galecki, Jim Parsons, Kaley Cuoco </div>
                             </div>
                             <div style="display: flex; justify-content:center; align-items:center;">
-                                <img width="48" height="48" src="https://img.icons8.com/color/48/prize.png" alt="prize"/>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/prize.png"
+                                    alt="prize" />
                                 <span class="text-muted">Won 10 Primetime Emmys. 79 wins & 254 nominations total</span>
                             </div>
                         </div>
