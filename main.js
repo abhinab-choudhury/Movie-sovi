@@ -24,19 +24,20 @@ document.addEventListener('click', (event) => {
 })
 
 document.getElementById('search-btn').addEventListener('click', () => {
-    document.getElementById('view-area').classList.add('hide-search-list');
+    document.querySelector('.item').innerHTML = "";
+    // document.getElementById('view-area').classList.add('hide-search-list');
     Movie_Lists_Page();
 })
 
 function Movie_Lists_Page() {
     let list = `
-    <div class="item">
-        <img class="main-poster"
+    <div class="item w-100">
+        <img width="170px" class="main-poster"
             src="https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NmIyLWE0ZmQtZDg2YjlmMzczZDZiXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg"
             alt="poster">
         <div class="item-list">
             <div class="details">
-                <div class="box">
+                <div>
                     <h1 class="title"> The Big Bang Theory </h1>
                     <div class="info">
                         <span class="type">Series</span>
@@ -52,6 +53,7 @@ function Movie_Lists_Page() {
         </div>
     </div>
     `
+    document.querySelector('.item').innerHTML = list;
 }
 
 async function fetch_data(search) {
