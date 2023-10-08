@@ -37,12 +37,13 @@ li{
 .item{
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-bottom: 20px;
 }
 
 .search-list {
   position: absolute;
-  width: 200px;
-  margin-left: 12px;
+  width: 240px;
+  margin-left: 0px;
   right: 1;
   top: 77%;
   max-height: 400px;
@@ -50,9 +51,12 @@ li{
   z-index: 10;
 }
 .search-list .search-list-item {
-  background-color: aliceblue;
+  width: 100%;
+  background-color: rgb(240, 245, 255);
   padding: 0.5rem;
-  border-bottom: 1px solid black;
+  border-bottom: 0px;
+  border: 1px solid transparent;
+  
   width: calc(350px- 8px);
   color: #fff;
   cursor: pointer;
@@ -61,7 +65,7 @@ li{
   transition: background-color 200ms ease;
 }
 .search-list .search-list-item:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(181, 189, 245);
 }
 
 .search-list-item {
@@ -74,8 +78,8 @@ li{
 }
 
 .search-item-thumbnail > img {
-  width: 80px;
-  margin-right: 1rem;
+  width: 50px;
+  margin-right: 0.5rem;
 }
 
 /* thumbnail */
@@ -154,7 +158,7 @@ li{
   opacity: 0.8;
   margin-top: 1.9rem;
   margin-right: auto;
-  color: #ffffff;
+  color: #161515;
 }
 .sub-list {
   font-family: var(--font-family_1);
@@ -181,12 +185,22 @@ li{
   opacity: 0.8;
 }
 
+.sub-type-language {
+  font-family: var(--font-family_2);
+  background-color: rgba(249, 175, 78, 0.598);
+  position: relative;
+  padding: 0.2rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
 
 .info-rating {
   display: flex;
   font-family: var(--font-family_2);
   font-size: .8rem;
-  margin-top:40px;
+  margin-top: 25px;
 }
 
 .info-rating > img {
@@ -205,7 +219,20 @@ li{
 }
 
 .plot {
+  margin-top: 20px;
   font-family: var(--font-family_2);
   font-weight: 700;
   font-size: 1rem;
+}
+
+.actors {
+  font-family: var(--font-family_3);
+  padding:10px;
+  margin: 10px;
+  font-style: 1rem;
+  font-weight: 500;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  display: inline-block;
+  
 }
