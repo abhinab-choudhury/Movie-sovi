@@ -77,6 +77,16 @@ li{
   align-items: center;
 }
 
+.search-list-title {
+  border: 1px solid transparent; 
+  color:black; 
+  background-color:aliceblue; 
+  border-radius:10px; 
+  padding:10px; 
+  font-weight:700; 
+  opacity:0.8;
+}
+
 .search-item-thumbnail > img {
   width: 50px;
   margin-right: 0.5rem;
