@@ -4,22 +4,22 @@ const API_KEY = '2b171025';
 const image_not_found = "./public/poster_not_found.jpg";
 
 let searchbox = document.querySelector('.search-box');
-let seach_list = document.querySelector('.search-list')
+let search_list = document.querySelector('.search-list')
 
 searchbox.addEventListener("keyup", async function () {
     let searchTerm = (searchbox.value).trim();
     if (searchTerm.length > 0) {
-        seach_list.classList.remove('hide-search-list');
+        search_list.classList.remove('hide-search-list');
         fetch_data(searchTerm);
     } else {
-        seach_list.classList.add('hide-search-list');
+        search_list.classList.add('hide-search-list');
     }
 })
 
 document.addEventListener('click', (event) => {
     console.log(event.target.idList);
-    if(event.target.classList != 'input-field') {
-        seach_list.classList.add('hide-search-list');
+    if (event.target.classList != 'input-field') {
+        search_list.classList.add('hide-search-list');
     }
 })
 
@@ -83,10 +83,10 @@ function list_similar_movies(data_responce) {
     let list = ""
     for (let i = 0; i < data_responce.length; i++) {
 
-        if(! (data_responce[i].Poster !== 'N/A')) {
+        if (!(data_responce[i].Poster !== 'N/A')) {
             data_responce[i].Poster = image_not_found;
         }
-        
+
         let similar_movie = `
         <div class="search-list-item" data-id="${data_responce[i].imdbID}">
             <div class="search-item-thumbnail">
@@ -103,25 +103,111 @@ function list_similar_movies(data_responce) {
         list += similar_movie;
     }
     document.getElementById("search-list").innerHTML = list;
-    list_click_handler();
+    list_click_handler(data_responce);
 }
 
-async function list_click_handler() {
+async function list_click_handler(data_responce) {
+    const click_search_button = document.querySelector("#search-btn");
+    click_search_button.addEventListener('click', async () => {
+        document.querySelector(".list").classList.add('hide-search-list');
 
-    const clicked_item = document.querySelectorAll('.search-list-item');
-    clicked_item.forEach(item => {
-        item.addEventListener('click', async () => {
-            seach_list.classList.add('hide-search-list');
-            searchbox.value = "";
+        const List = document.querySelector(".row");
+        List.classList.remove('hide-search-list');
+
+        let HTML = "";
+        for (let i = 0; i < data_responce.length; i++) {
+            HTML += `
+            <button class="col-3" data-id="${data_responce[i].imdbID}>
+                <img width="200px" class="main-poster border rounded" src="${data_responce[i].Poster}" alt="poster" />
+                <h6 class="search-list-title mx-4 my-0">${data_responce[i].Title}</h6>
+            </button>
+            `;
+        }
+
+        List.innerHTML = HTML;
+        const clicked_item = document.querySelectorAll('.col-3');
+        clicked_item.forEach(item => async () => {
+            document.querySelector(".list").classList.remove('hide-search-list');
+            document.querySelector(".row").classList.add('hide-search-list');
 
             let item_info = await fetch_item_details(item.dataset.id);
 
-            let languages="";
+            let languages = "";
             for (let i = 0; i < item_info.Language.split("," || " ").length; i++) {
                 let lang = `<span class="sub-type-language mx-2">${item_info.Language.split(',')[i]}</span>`
                 languages += lang;
             }
-    
+
+            let detail = `
+            <img class="main-poster"
+                src="${item_info.Poster}"
+                alt="poster">
+            <div class="item-list">
+                <div class="details">
+                    <div class="box">
+                        <h1 class="title"> ${item_info.Title} </h1>
+                        <div class="info">
+                            <span class="type">${item_info.Type}</span>
+                            <h3 class="aired">${item_info.Year}</h3>
+                        </div>
+                    </div>
+                    <div class="sub-list container">
+                    <div class="d-flex">
+                        <span class="sub-type-year"> 
+                            ${item_info.Released}
+                        </span>
+                        <p class="info-rating">
+                            <span class="tags" title="Ratings">
+                                <img src="https://img.icons8.com/color/48/imdb.png" alt="imdb"/>                                       
+                                <img class="space" width="28" height="28" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 
+                                ${item_info.imdbRating}
+                            </span>
+                            <span class="tags" title="Votes">
+                                <img class="space" src="https://img.icons8.com/parakeet/48/starred-ticket.png" alt="starred-ticket"/>
+                                ${item_info.imdbVotes}
+                            </span>
+                            <span class="tags" title="Genre">
+                                <img class="space"  src="https://img.icons8.com/arcade/64/comet.png" alt="comet"/>
+                                ${item_info.Genre}
+                            </span>
+                        </p>
+                        </div>
+                        <div class="language" title="Lanuages Avilable"> 
+                            ${languages}
+                        </div>
+                        <p class="text-wrap plot" >
+                            ${item_info.Plot}    
+                            </p>
+                            </div>
+                    <div class="actors">
+                    <span class="text-muted">Actors :</span> 
+                    <div class="actors-names">${item_info.Actors}</div>
+                    </div>
+                    <div style="display: flex; justify-content:center; align-items:center;">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/prize.png" alt="prize"/>
+                        <span class="text-muted">${item_info.Awards}</span>
+                    </div>
+                </div>
+            </div>
+            `;
+            document.querySelector('.item').innerHTML = detail;
+        })
+    })
+
+    const clicked_item = document.querySelectorAll('.search-list-item');
+    clicked_item.forEach(item => {
+        item.addEventListener('click', async () => {
+            search_list.classList.add('hide-search-list');
+            searchbox.value = "";
+
+            let item_info = await fetch_item_details(item.dataset.id);
+
+            let languages = "";
+            for (let i = 0; i < item_info.Language.split("," || " ").length; i++) {
+                let lang = `<span class="sub-type-language mx-2">${item_info.Language.split(',')[i]}</span>`
+                languages += lang;
+            }
+
             let detail = `
             <img class="main-poster"
                 src="${item_info.Poster}"
