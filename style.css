@@ -244,5 +244,31 @@ li{
   background-color: blanchedalmond;
   border-radius: 10px;
   display: inline-block;
-  
+}
+
+@media screen and (max-width:450px) {
+  .search-list {
+    margin-top: 50px;
+  }
+  .list {
+    display: block;
+    margin:0px;
+    margin-bottom: 40px;
+  }
+  .item {
+    display: block;
+    margin: 0px;
+  }
+  .details {
+    margin: auto;
+  }
+  p{
+    margin: 2px;
+  }
+  .main-poster {
+    margin-left: 30px;
+  }
+  .tags {
+    margin-right: 3px;
+  }
 }
