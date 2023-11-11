@@ -117,7 +117,7 @@ li{
 .details {
   font-family: var(--font-family_2);
   display: block;
-  margin: auto 3rem;
+  margin: auto 1.2rem;
 }
 
 
@@ -199,7 +199,8 @@ li{
   font-family: var(--font-family_2);
   background-color: rgba(249, 175, 78, 0.598);
   position: relative;
-  padding: 0.2rem;
+  padding: 3px;
+  display: inline;
   border-radius: 3px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -225,7 +226,7 @@ li{
 .tags {
   display:flex;  
   align-items: center;
-  margin-right: 10px;
+  margin-right: 2px;
 }
 
 .plot {
@@ -238,7 +239,7 @@ li{
 .actors {
   font-family: var(--font-family_3);
   padding:10px;
-  margin: 10px;
+  margin: 20px auto;
   font-style: 1rem;
   font-weight: 500;
   background-color: blanchedalmond;
@@ -247,6 +248,10 @@ li{
 }
 
 @media screen and (max-width:450px) {
+  .space {
+    margin-right:2px; 
+    margin-left:2px;
+  }
   .search-list {
     margin-top: 50px;
   }

@@ -164,7 +164,7 @@ async function list_click_handler(data_responce) {
                             <div class="info">
                                 <span class="type">${item_info.Type}</span>
                                 <h3 class="aired">${item_info.Year}</h3>
-                                <button data-imdbid=${item_info.imdbID} class="wishlist-btn rounded bg-dark text-white p-1 m-1" style="font-size: 13px;">Add to Wishlist</button>
+                                <button data-imdbid=${item_info.imdbID} class="wishlist-btn rounded bg-dark text-white ms-auto" style="font-size: 13px;">Add to Wishlist</button>
                             </div>
                         </div>
                         <div class="sub-list">
