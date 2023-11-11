@@ -247,15 +247,6 @@ li{
 }
 
 @media screen and (max-width:450px) {
-  .box {
-    display: block;
-  }
-  .box > .info {
-    margin: 20px auto;
-  }
-  .wishlist-btn{
-    margin-left: auto !important;
-  }
   .search-list {
     margin-top: 50px;
   }

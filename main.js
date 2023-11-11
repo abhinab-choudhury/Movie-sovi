@@ -1,9 +1,9 @@
 import './style.css'
 
-const API_KEY = import.meta.env.VITE_API;
-const image_not_found = "./public/poster_not_found.jpg"
+const API_KEY = '2b171025';
+const image_not_found = "./public/poster_not_found.jpg";
 
-let searchbox = document.querySelector('.search-box')
+let searchbox = document.querySelector('.search-box');
 let search_list = document.querySelector('.search-list')
 
 
@@ -11,55 +11,47 @@ let search_list = document.querySelector('.search-list')
 searchbox.addEventListener("keyup", async function () {
     let searchTerm = (searchbox.value).trim();
     if (searchTerm.length > 0) {
-        search_list.classList.remove('hide-search-list')
-        const data_responce = fetch_data(searchTerm);
-
-        if (data_responce) {
-            if (data_responce.Response == "True") {
-                // console.log(data_responce.Search);
-                list_similar_movies(data_responce.Search)
-            }
-        }
-        
+        search_list.classList.remove('hide-search-list');
+        fetch_data(searchTerm);
     } else {
-        search_list.classList.add('hide-search-list')
+        search_list.classList.add('hide-search-list');
     }
 })
 
 // This is a click event which helps in close the search suggession which pops up below to search input-field.
-// document.addEventListener('click', (event) => {
-//     // console.log(event.target.idList);
-//     if (event.target.classList != 'input-field') {
-//         search_list.classList.add('hide-search-list');
-//     }
+document.addEventListener('click', (event) => {
+    // console.log(event.target.idList);
+    if (event.target.classList != 'input-field') {
+        search_list.classList.add('hide-search-list');
+    }
 
-//     if (document.querySelector('.wishlist-btn').classList.contains('wishlist-btn')) {
-//         const movieid = document.querySelector('.wishlist-btn').dataset.imdbid;
-//         if(JSON.parse(localStorage.getItem('wishlist')).contains(movieid)) {
-//             console.log(localStorage.getItem('wishlist'))
-//             addToWishlist(movieid)
-//         } else {
-//             removeFromWishlist(movieid)
-//         }
-//     }
+    if (document.querySelector('.wishlist-btn').classList.contains('wishlist-btn')) {
+        const movieid = document.querySelector('.wishlist-btn').dataset.imdbid;
+        if(JSON.parse(localStorage.getItem('wishlist')).contains(movieid)) {
+            console.log(localStorage.getItem('wishlist'))
+            addToWishlist(movieid)
+        } else {
+            removeFromWishlist(movieid)
+        }
+    }
 
-// })
-// function removeFromWishlist(movieid) {
-//     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
-//     const index = wishlist.indexOf(movieid);
+})
+function removeFromWishlist(movieid) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
+    const index = wishlist.indexOf(movieid);
 
-//     if (index !== -1) {
-//         wishlist.splice(index, 1); 
-//     }
-//     localStorage.setItem('wishlist', JSON.stringify(wishlist))
+    if (index !== -1) {
+        wishlist.splice(index, 1); 
+    }
+    localStorage.setItem('wishlist', JSON.stringify(wishlist))
 
-// }
+}
  
-// function addToWishlist(movieid) {
-//     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
-//     wishlist.push(movieid)
-//     localStorage.setItem('wishlist', JSON.stringify(wishlist))
-// }
+function addToWishlist(movieid) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
+    wishlist.push(movieid)
+    localStorage.setItem('wishlist', JSON.stringify(wishlist))
+}
 
 
 
@@ -67,25 +59,31 @@ searchbox.addEventListener("keyup", async function () {
 async function fetch_data(search) {
     const URL = `http://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=${search}`
     const data_responce = await fetch(`${URL}`).then((responce) => {
-        return responce.json()
+        return responce.json();
     })
 
-    return data_responce
+    if (data_responce) {
+        if (data_responce.Response == "True") {
+            // console.log(data_responce.Search);
+            list_similar_movies(data_responce.Search);
+        }
+    }
+
 }
 
 // help to fetch detail about a particlar move from IMDB Database using it ID.
-const fetch_item_details = async (id) => {
+async function fetch_item_details(id) {
     const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
-    const responce = await fetch(URL)
-    const responce_data = await responce.json()
+    const responce = await fetch(URL);
+    const responce_data = await responce.json();
 
-    return responce_data
+    return responce_data;
 }
 
 
 // This function return the string which is a formated HTML arranged according to the responce received 
 // from the API.
-const list_similar_movies = (data_responce) => {
+function list_similar_movies(data_responce) {
     let list = ""
     for (let i = 0; i < data_responce.length; i++) {
 
@@ -116,7 +114,7 @@ const list_similar_movies = (data_responce) => {
     // responds a when clicked on search button.
 }
 
-const list_click_handler = async (data_responce) => {
+async function list_click_handler(data_responce) {
 
     // this const variable handles the search button on top at the navbar
     const click_search_button = document.querySelector("#search-btn");
@@ -292,6 +290,3 @@ const list_click_handler = async (data_responce) => {
         })
     })
 }
-
-
-
