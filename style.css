@@ -201,10 +201,13 @@ li{
   position: relative;
   padding: 3px;
   display: inline;
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 700;
   opacity: 0.8;
+  margin-left: 3px;
+  margin-top: 4px;
+  text-align: center;
 }
 
 .info-rating {
