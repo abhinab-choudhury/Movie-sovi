@@ -1,6 +1,6 @@
 import './style.css'
 
-const API_KEY = '2b171025';
+const API_KEY = import.meta.env.VITE_API;
 const image_not_found = "./public/poster_not_found.jpg";
 
 let searchbox = document.querySelector('.search-box');
