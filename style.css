@@ -99,7 +99,7 @@ li{
 
 .search-list::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .search-list::-webkit-scrollbar-thumb {
@@ -133,7 +133,7 @@ li{
   padding-bottom: 2px;
   margin: auto 0;
   border-radius: 5px;
-
+  padding: 6px auto;
 }
 
 .title { 
