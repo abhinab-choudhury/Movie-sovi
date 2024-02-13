@@ -4,6 +4,11 @@
   <img style="margin-left: 10px;"  width="100" height="100" src="https://img.icons8.com/fluency/100/vite.png" alt="vite"/>
 </div>
 
+Todo
+- Migrate from js to React
+- create a tracking system for search history
+- suggest movies based on the search history
+
 # Movie-sovi
  
   A Movie Listing Website Written in Vanila Javascript and Vite and OMDb API to Fetch Movies,Series and TV Shows related Data.
