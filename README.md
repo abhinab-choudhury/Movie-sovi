@@ -1,6 +1,6 @@
-<div style="display:flex;">
+<div>
   <img style="margin-left: 10px;" width="100" height="100" src="https://img.icons8.com/color/100/cinema---v1.png" alt="cinema---v1"/>
-   <img style="margin-left: 10px;"  width="100" height="100" src="https://img.icons8.com/color/100/imdb.png" alt="imdb"/> 
+  <img style="margin-left: 10px;"  width="100" height="100" src="https://img.icons8.com/color/100/imdb.png" alt="imdb"/> 
   <img style="margin-left: 10px;"  width="100" height="100" src="https://img.icons8.com/fluency/100/vite.png" alt="vite"/>
 </div>
 
