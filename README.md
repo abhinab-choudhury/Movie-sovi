@@ -4,6 +4,15 @@
   <img style="margin-left: 10px;"  width="100" height="100" src="https://img.icons8.com/fluency/100/vite.png" alt="vite"/>
 </div>
 
+
+[] Setup File Structure
+[] implement a AI for the Movie Recommendation 
+[] implement a interactive home.page 
+[] provide services like sending email about upcomming movies and shows when the used subscribes the show
+
+
+
+
 # Movie-sovi
  
   A Movie Listing Website Written in Vanila Javascript and Vite and OMDb API to Fetch Movies,Series and TV Shows related Data.
